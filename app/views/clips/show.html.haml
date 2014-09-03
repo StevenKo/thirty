@@ -1,0 +1,29 @@
+.span8
+  .well
+    .clip-show-title
+      %h1 害人的美女 : 美女讓爸爸看傻了
+    .youtube-video
+      .video-show-container 
+        %iframe{:allowfullscreen => "", :frameborder => "0", :height => "349", :src => "http://www.youtube.com/embed/FKWwdQu6_ok", :width => "425"}
+  .facebook-comments-box.well
+    .fb-comments{"data-href" => "http://example.com", "data-num-posts" => "2", "data-width" => "660"}
+.span4
+  .well
+    = button_to "收藏", "#", :class => "btn btn-success"
+  .well
+    評分
+    = form_for "", :url => rate_clips_path, :remote => true do |f|
+      - 1.upto(5) do |value|
+        = star_button f, @clip, value, (value)
+      = hidden_field_tag("clip_id", @clip.id)
+      = f.submit :id => "submit_#{@clip.id}", :style => "display: none; "
+  .well
+    推薦
+    %br
+    -@recomment_clips.each do |r|
+      .recomment-clip
+        .image
+          = image_tag "http://img.youtube.com/vi/#{r.video_id}/1.jpg"
+        .title
+          =r.title
+

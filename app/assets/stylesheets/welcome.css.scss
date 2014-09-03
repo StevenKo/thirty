@@ -1,0 +1,40 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "compass";
+
+
+.item_box {
+    float:left;
+    margin: 0 7px 10px 5px;
+	width: 240px;
+	height: 270px;
+	padding: 10px;
+	@include box-shadow(0 2px 5px rgba(#000,.3));
+	@include border-radius(5px);
+	.title{
+	  margin: 0 0 5px 0;
+	  a{
+		    color: #666;
+	   }
+	}
+	.play-button{
+		position: absolute;
+		top: 65px;
+		left: 80px;
+	}
+	.user-info{
+		.count-info{
+			float:left;
+		}
+		.count-info.collect-clip{
+			display:block;
+			float:right;
+		}
+		
+	}
+
+	@include clearfix;
+}
+

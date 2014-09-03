@@ -1,0 +1,5 @@
+$('.modal-body').remove();
+$('.modal-footer').remove();
+$('.modal-header').after("<%= escape_javascript render '_partials/modal_body', :clip => @clip%>");
+
+FB.XFBML.parse(); 

@@ -1,0 +1,10 @@
+.video-container  
+  #myCarousel.carousel.slide
+    .carousel-inner
+      .active.item
+        %iframe{:allowfullscreen => "", :frameborder => "0", :height => "349", :src => "http://www.youtube.com/embed/FKWwdQu6_ok?version=3&enablejsapi=1", :width => "425"}
+      .item
+        %iframe{:allowfullscreen => "", :frameborder => "0", :height => "349", :src => "http://www.youtube.com/embed/FKWwdQu6_ok", :width => "425"}
+    / End of Carousel Inner
+    = link_to "‹", preload_left_video_clips_path, :class => "left carousel-control", "data-slide" => "prev", 'data-target' => "#myCarousel", :remote => true
+    = link_to "›", preload_right_video_clips_path, :class => "right carousel-control", "data-slide" => "next", 'data-target' => "#myCarousel", :remote => true

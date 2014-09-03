@@ -1,0 +1,14 @@
+.span2
+  =render :partial => "_partials/sidebar", :locals => {:tags => @tags}
+.span8
+  = will_paginate(@clips,:style => "display: none; ")
+  =render :partial => "_partials/clips_show", :locals => {:clips => @clips}
+
+.span2
+  .well
+    %h1 合作夥伴
+    %br
+    =link_to image_tag("videohya.jpg"),"http://itunes.apple.com/tw/app/30miao-xiao-chu-lai/id469794491?l=zh&mt=8", :target=>"_blank"
+
+= render :partial => "_partials/video_show"
+= render :partial => "_partials/login"  

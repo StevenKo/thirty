@@ -1,0 +1,67 @@
+@import "compass";
+@include global-reset;
+@import "box";
+@import "icons";
+
+footer {
+	    font-size: 12px;
+	    height: 50px;
+	    margin: 20px auto 0;
+	    padding-bottom: 60px;
+	    width: 100%;
+	    text-align: center;
+	    width: 250px;
+  ul.nav.nav-pills{
+  	text-align: center;
+  }
+}
+
+.login{
+  	    font-size: 20px;
+	    height: 280px;
+	    margin: 20px auto 0;
+	    padding-bottom: 60px;
+	    width: 320px;
+	    text-align: center;
+	    a{
+	      font-size: 14px;
+	    }
+  ul.nav.nav-pills{
+  	text-align: center;
+  }
+}
+
+.facebook_like_box {
+	margin: 20px auto 0;
+	width: 975px;
+}
+
+.topbar_name{
+	color: red;
+}
+
+body{
+	margin-top: 60px;
+}
+
+
+// tags
+.tags{
+  margin-top: 20px;
+  padding: 0 0 10px 0;
+  .css1 { font-size: 1.0em; }
+  .css2 { font-size: 1.2em; }
+  .css3 { font-size: 1.4em; }
+  .css4 { font-size: 1.6em; }
+}
+
+.feedback{
+
+position: fixed;
+right: 0px;
+top: 80%;
+z-index: 9999;
+display: block;
+background-repeat: no-repeat no-repeat;
+border-left: none;
+}

@@ -1,0 +1,5 @@
+.offset1
+.span12
+  = will_paginate(@clips,:style => "display: none; ")
+  =render :partial => "_partials/clips_show", :locals => {:clips => @clips}
+

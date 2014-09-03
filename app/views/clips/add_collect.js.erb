@@ -1,0 +1,2 @@
+$('#btn-collect-<%= @clip.id %>').remove();
+$('.count-info.collect-clip.<%=@clip.id%>').append("<%= escape_javascript render '_partials/collect_button', :clip => @clip, :url => remove_collect_clip_path(p), :style => 'btn btn-danger', :str => '已收藏' %>");

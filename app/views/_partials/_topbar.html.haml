@@ -1,0 +1,28 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container{:style => "width: auto;"}
+      %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      .nav-collapse
+        %ul.nav
+          %li.active
+            = link_to "天天開心", root_path
+          %li
+            =link_to "首頁", root_path
+          %li
+            = link_to "熱門", popular_clips_path
+          %li
+            =link_to "最新",latest_clips_path
+          %li
+            = link_to "一直笑",tv_clips_path
+        .navbar-search
+          = form_tag clips_search_path, :method => :post do
+            = text_field_tag "search","",:class => "search-query span3", :placeholder => "Search"
+            .icon-search
+        .pull-right
+          - if current_user
+            = button_to "登出",logout_path, :class => "btn btn-warning"
+          - else
+            = button_to "登入 or 註冊", new_user_session_path,:class => "btn btn-info"

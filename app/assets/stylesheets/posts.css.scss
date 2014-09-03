@@ -1,0 +1,27 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post_title{
+	margin-bottom: 10px;
+	font-size: 25px;
+	width: 65%;
+}
+
+.post_video{
+	display: inline-block;
+	float:left;
+}
+
+.group{
+	width: 300px;
+	float: left;
+	margin: 0 0 15px 30px;
+    ul{
+    	font-size: 20px;
+    	margin-bottom: 15px;
+    }
+    li{
+      margin-bottom: 10px;
+    }
+}

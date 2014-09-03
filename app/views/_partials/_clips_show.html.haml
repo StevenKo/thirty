@@ -1,0 +1,25 @@
+#item_box_container.item_box_container.center
+  - clips.each do |p|
+    .item_box
+      = link_to (image_tag "Play-Button.png", :class => "play-button", :width => "90px"),update_modal_clip_path(p),"data-toggle" => "modal", 'data-target' => "#myModal",:remote => true
+      = image_tag "http://img.youtube.com/vi/#{p.video_id}/1.jpg", :width => "240"
+      .title
+        =link_to p.title, clip_path(p)
+      .user-info
+        %ul
+          .count-info
+            = fb_like(clip_path(p))
+            = form_for "", :url => rate_clips_path, :remote => true do |f|
+              - 1.upto(5) do |value|
+                = star_button f, p, value, p.rating
+              = hidden_field_tag("clip_id", p.id)
+              = f.submit :id => "submit_#{p.id}", :style => "display: none; "
+          .count-info.collect-clip{:class => "#{p.id}"}
+            - if current_user
+              - if current_user.collect(p)
+                = button_to "已收藏", remove_collect_clip_path(p), :class => "btn btn-danger",:remote => true, :method => :put, :id => "btn-collect-#{p.id}"
+              - else
+                = button_to "收藏", add_collect_clip_path(p), :class => "btn btn-success",:remote => true, :method => :put, :id => "btn-collect-#{p.id}"
+            -else
+              = button_to "收藏", "#", :class => "btn btn-success", "data-toggle" => "modal", 'data-target' => "#loginModal", :id => "btn-collect-#{p.id}"
+

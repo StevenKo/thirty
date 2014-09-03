@@ -1,0 +1,17 @@
+.well
+  分類
+  %ul.nav.nav-list
+    %li= link_to "人物", clips_category_path("人物")
+    %li= link_to "動物", clips_category_path("動物")
+    %li= link_to "動畫", clips_category_path("動畫")
+    %li= link_to "嬰幼兒", clips_category_path("嬰幼兒")
+    %li= link_to "寵物", clips_category_path("寵物")
+    %li= link_to "廣告", clips_category_path("廣告")
+    %li= link_to "生活", clips_category_path("生活")
+    %li= link_to "節目", clips_category_path("節目")
+    %li= link_to "運動", clips_category_path("運動")
+.well
+  熱門關鍵字
+  .tags
+    - tag_cloud(tags, %w(css1 css2 css3 css4)) do |tag, css_class|
+      = link_to tag.name, clips_category_path(tag.name), :class => css_class

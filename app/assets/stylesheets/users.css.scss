@@ -1,0 +1,48 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "compass";
+
+.user-info{
+	display:block;
+	.user-image{
+       padding: 10px;
+	   background: white;
+	   @include box-shadow(0 2px 5px rgba(#000,.3));
+	   @include border-radius(5px);
+	   width: 50px;
+	   float: left;
+	}
+	.user-name{
+	   margin: 20px 0 0 20px;
+       float: left;
+	}
+
+	@include clearfix;
+}
+
+
+
+.semantic-navigation{
+  margin-top: 20px;
+}
+
+ul.sub-nav {
+@include border-radius(6px);
+border: 1px solid #C7C7C7;
+margin-bottom: 14px;
+margin-left: 0;
+padding-left: 20px;
+display: block;
+height: 3em;
+background: rgba(255, 255, 255, 0.45);
+}
+
+ul.sub-nav li {
+display: inline-block;
+padding: 4px 5px;
+height: 2.5em;
+line-height: 2.5em;
+}
+

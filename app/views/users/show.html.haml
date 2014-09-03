@@ -1,0 +1,24 @@
+.well
+  .user-info
+    .user-image
+      =image_tag('http://graph.facebook.com/1511171039/picture?type=square')
+    .user-name
+      Steven Ko
+  .semantic-navigation   
+    %ul#sub_navigation.sub-nav
+      %li
+        %a{:href => "/user/1511171039/recipes"}
+          %span 收藏的影片
+  #item_box_container.item_box_container.center
+    - @clips.each do |p|
+      .item_box
+        = link_to (image_tag "Play-Button.png", :class => "play-button", :width => "90px"),update_modal_clip_path(p),"data-toggle" => "modal", 'data-target' => "#myModal",:remote => true
+        = image_tag "http://img.youtube.com/vi/#{p.video_id}/1.jpg", :width => "240"
+        .title
+          =link_to p.title, "#"
+        .user-info
+          %ul
+            .count-info
+              .fb-like{"data-layout" => "button_count", "data-send" => "false", "data-show-faces" => "false", "data-width" => "30"}
+            .count-info
+              = button_to "收藏", "#", :class => "btn btn-success"
